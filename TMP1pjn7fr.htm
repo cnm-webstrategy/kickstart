@@ -1,0 +1,2127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: js/ddmegamenu.css" type="text/css" />
+<style type="text/css">
+
+/* ######### Shared basic style for mega drop down menu DIV ######### */
+
+
+
+.mega{
+	width: 310px; /*default width of mega menu*/
+	padding: 10px;
+	position: absolute;
+	visibility: hidden;
+	border: 2px solid;
+	border-top-width: 1px;
+	background: #FFFFF0;
+	-webkit-box-shadow: 5px 5px 5px  #334973; /*css 3 shadows*/
+	-moz-box-shadow: 5px 5px 5px #334973;
+	box-shadow: 5px 5px 5px #334973;
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: Regular;
+	color: #404f87;
+	background-color: #EEEEEE;
+	border-color: #666666;
+	font-size: 14px;
+}
+
+.mega .column{ /*each link column within a mega menu*/
+float:left;
+width:49%;
+}
+
+.mega a{
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 2px;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 3px;
+}
+
+
+.mega a[rel]:after{ /*add "down.png" to anchor links, or those with a rel attribute */
+content:" " url(js/down.png);
+}
+.mega a:visited{
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 1px;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.mega a:hover { /*Selected Tab style*/
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #3554dd;
+	background-color: #EEEEF4;
+	border-style: solid;
+	border-color: #3554dd;
+	border-width: 2px;
+	font-size: 16px;
+}
+
+
+.mega .column ul{
+margin:0;
+margin-left:5px;
+padding:0;
+list-style:none;
+}
+
+.mega .column ul li{
+margin-bottom:3px;
+}
+
+.mega .ulmenu{ /*style any UL within mega menu with class="ulmenu"*/
+margin:0;
+padding:0;
+border:1px solid gray;
+border-bottom-width:0;
+list-style:none;
+}
+
+.mega .ulmenu a{
+display:block;
+border-bottom:1px solid gray;
+padding:5px;
+}
+
+.mega .ulmenu a:hover{
+background:lightyellow;
+
+}
+
+.mega2{
+	width: 310px; /*default width of mega menu*/
+	padding: 10px;
+	position: absolute;
+	visibility: hidden;
+	border: 2px solid;
+	border-top-width: 1px;
+	background: #FFFFF0;
+	-webkit-box-shadow: 5px 5px 5px  #334973; /*css 3 shadows*/
+	-moz-box-shadow: 5px 5px 5px #334973;
+	box-shadow: 5px 5px 5px #334973;
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: Regular;
+	color: #404f87;
+	background-color: #EEEEEE;
+	border-color: #666666;
+	font-size: 14px;
+}
+
+.mega2 .column{ /*each link column within a mega menu*/
+float:left;
+width:49%;
+}
+
+.mega2 a{
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 2px;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 3px;
+}
+
+
+.mega2 a[rel]:after{ /*add "down.png" to anchor links, or those with a rel attribute */
+content:" " url(js/down.png);
+}
+.mega2 a:visited{
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 1px;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.mega2 a:hover { /*Selected Tab style*/
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #3554dd;
+	background-color: #EEEEF4;
+	border-style: solid;
+	border-color: #3554dd;
+	border-width: 2px;
+	font-size: 16px;
+}
+
+
+.mega2 ul{
+margin:0;
+margin-left:5px;
+padding:0;
+list-style:none;
+}
+
+.mega2 ul li{
+margin-bottom:3px;
+}
+
+.mega2 .ulmenu{ /*style any UL within mega menu with class="ulmenu"*/
+margin:0;
+padding:0;
+border:1px solid gray;
+border-bottom-width:0;
+list-style:none;
+}
+
+.mega2 .ulmenu a{
+display:block;
+border-bottom:1px solid gray;
+padding:5px;
+}
+
+.mega2 .ulmenu a:hover{
+background:lightyellow;
+
+}
+/* Links */
+.Wlinks {
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	font-size: 18px;
+	text-decoration: none;
+	padding: 0px;
+}
+.Wlinks2 {
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #3554dd;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 0px;
+}
+.Wlinks3 {
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #3554dd;
+	font-size: 18px;
+	text-decoration: none;
+	padding: 0px;
+	/* [disabled]background-color: #fdfae1; */
+}
+.slidetitle {
+	font: Regular 16px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	text-decoration: none;
+	padding: 0px;
+}
+
+.Wlinks a{
+   font: Regular 18px Arial;
+   font-family:Verdana,sans-serif;
+   font-weight:bold;
+   color:#666666; 
+   background-color:#EEEEEE;
+   font-size:18px;
+   text-decoration:none;
+   padding:3px;
+   border-style:solid;
+   border-color:#666666;
+   border-width:2px;
+
+}
+
+.Wlinks a:visited{
+font: Regular 18px Arial;
+   font-family:Verdana,sans-serif;
+   font-weight:bold;
+   color:#666666; 
+   background-color:#EEEEEE;
+   border-style:solid;
+   border-color:#666666;
+   border-width:2px;
+   font-size:18px;
+   text-decoration:none;
+}
+
+.Wlinks a:hover { /*Selected Tab style*/
+   font-family:Verdana,sans-serif;
+   font-weight:bold;
+   color:#3554dd; 
+   background-color:#EEEEF4;
+   font-size:18px;
+   border-style:solid;
+   border-color:#3554dd;
+   border-width:2px;
+
+}
+
+/* ######### Style for Solid Block Mega Menu ######### */
+
+.solidblocktheme{ /*additional mega drop down menu style for this theme*/
+border:2px solid #2f4187;
+padding:0; /*remove default padding inside mega menu*/
+}
+
+.solidblocktheme p, .solidblocktheme .column{
+padding:5px; /*add padding inside p and .column elements within mega menu*/
+width:auto;
+}
+
+.solidblockmenu{
+	margin: 0;
+	padding: 0;
+	float: left;
+	font: bold 13px Arial;
+	width: 100%;
+	overflow: hidden;
+	background: black url(images/blockdefault_cnm.gif) center center repeat-x;
+
+}
+
+.solidblockmenu li{
+display: inline;
+
+}
+
+.solidblockmenu li a{
+float: left;
+color: white;
+padding: 9px 11px;
+text-decoration: none;
+
+
+border-right: 1px solid white;
+
+}
+
+.solidblockmenu li a:visited{
+color: white;
+}
+
+.solidblockmenu li a:hover, .solidblockmenu li a.selected{ /*Selected Tab style*/
+color: white;
+background: transparent url(images/blockactive_cnm.gif) center center repeat-x;
+}
+
+.solidblockmenu2{
+	margin: 0;
+	padding: 0;
+	float: left;
+	font: bold 13px Arial;
+	width: 135px;
+	overflow: hidden;
+	background: black url(images/blockdefault_cnm.gif) center center repeat-x;
+	padding-left: 12px;
+}
+
+.solidblockmenu2 li{
+display: inline;
+
+}
+
+.solidblockmenu2 li a{
+float: left;
+color: white;
+padding: 9px 11px;
+text-decoration: none;
+
+}
+
+.solidblockmenu2 li a:visited{
+color: white;
+}
+
+.solidblockmenu2 li a:hover, .solidblockmenu2 li a.selected{ /*Selected Tab style*/
+color: white;
+background: transparent url(images/blockactive_cnm.gif) center center repeat-x;
+}
+
+.solidblockmenu3{
+	margin: 0;
+	padding: 0;
+	float: left;
+	font: bold 13px Arial;
+	width: 135px;
+	overflow: hidden;
+	/* [disabled]border: 0px solid #487bdc; */
+	/* [disabled]border-width: 1px 0; */
+	background: black url(images/table_bk.gif) center center repeat-x;
+	padding-left: 15px;
+
+}
+
+.solidblockmenu3 li{
+display: inline;
+
+}
+
+.solidblockmenu3 li a{
+float: left;
+color: white;
+padding: 9px 9px;
+text-decoration: none;
+
+border: 1px solid #2f4187;
+}
+
+.solidblockmenu3 li a:visited{
+color: white;
+}
+
+.solidblockmenu3 li a:hover, .solidblockmenu3 li a.selected{ /*Selected Tab style*/
+color: white;
+background: transparent url(images/table_over_bk.gif) center center repeat-x;
+}
+
+.cc_workshop {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 15px;
+	font-weight: regular;
+	text-align:center;
+}
+
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: js/ddmegamenu.css" type="text/css" />
+<style type="text/css">
+
+/* ######### Shared basic style for mega drop down menu DIV ######### */
+
+
+
+.mega{
+	width: 310px; /*default width of mega menu*/
+	padding: 10px;
+	position: absolute;
+	visibility: hidden;
+	border: 2px solid;
+	border-top-width: 1px;
+	background: #FFFFF0;
+	-webkit-box-shadow: 5px 5px 5px  #334973; /*css 3 shadows*/
+	-moz-box-shadow: 5px 5px 5px #334973;
+	box-shadow: 5px 5px 5px #334973;
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: Regular;
+	color: #404f87;
+	background-color: #EEEEEE;
+	border-color: #666666;
+	font-size: 14px;
+}
+
+.mega .column{ /*each link column within a mega menu*/
+float:left;
+width:49%;
+}
+
+.mega a{
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 2px;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 3px;
+}
+
+
+.mega a[rel]:after{ /*add "down.png" to anchor links, or those with a rel attribute */
+content:" " url(js/down.png);
+}
+.mega a:visited{
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 1px;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.mega a:hover { /*Selected Tab style*/
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #3554dd;
+	background-color: #EEEEF4;
+	border-style: solid;
+	border-color: #3554dd;
+	border-width: 2px;
+	font-size: 16px;
+}
+
+
+.mega .column ul{
+margin:0;
+margin-left:5px;
+padding:0;
+list-style:none;
+}
+
+.mega .column ul li{
+margin-bottom:3px;
+}
+
+.mega .ulmenu{ /*style any UL within mega menu with class="ulmenu"*/
+margin:0;
+padding:0;
+border:1px solid gray;
+border-bottom-width:0;
+list-style:none;
+}
+
+.mega .ulmenu a{
+display:block;
+border-bottom:1px solid gray;
+padding:5px;
+}
+
+.mega .ulmenu a:hover{
+background:lightyellow;
+
+}
+
+.mega2{
+	width: 310px; /*default width of mega menu*/
+	padding: 10px;
+	position: absolute;
+	visibility: hidden;
+	border: 2px solid;
+	border-top-width: 1px;
+	background: #FFFFF0;
+	-webkit-box-shadow: 5px 5px 5px  #334973; /*css 3 shadows*/
+	-moz-box-shadow: 5px 5px 5px #334973;
+	box-shadow: 5px 5px 5px #334973;
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: Regular;
+	color: #404f87;
+	background-color: #EEEEEE;
+	border-color: #666666;
+	font-size: 14px;
+}
+
+.mega2 .column{ /*each link column within a mega menu*/
+float:left;
+width:49%;
+}
+
+.mega2 a{
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 2px;
+	font-size: 16px;
+	text-decoration: none;
+	padding: 3px;
+}
+
+
+.mega2 a[rel]:after{ /*add "down.png" to anchor links, or those with a rel attribute */
+content:" " url(js/down.png);
+}
+.mega2 a:visited{
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	background-color: #EEEEEE;
+	border-style: solid;
+	border-color: #666666;
+	border-width: 1px;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.mega2 a:hover { /*Selected Tab style*/
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #3554dd;
+	background-color: #EEEEF4;
+	border-style: solid;
+	border-color: #3554dd;
+	border-width: 2px;
+	font-size: 16px;
+}
+
+
+.mega2 ul{
+margin:0;
+margin-left:5px;
+padding:0;
+list-style:none;
+}
+
+.mega2 ul li{
+margin-bottom:3px;
+}
+
+.mega2 .ulmenu{ /*style any UL within mega menu with class="ulmenu"*/
+margin:0;
+padding:0;
+border:1px solid gray;
+border-bottom-width:0;
+list-style:none;
+}
+
+.mega2 .ulmenu a{
+display:block;
+border-bottom:1px solid gray;
+padding:5px;
+}
+
+.mega2 .ulmenu a:hover{
+background:lightyellow;
+
+}
+/* Links */
+.Wlinks {
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	font-size: 18px;
+	text-decoration: none;
+	padding: 0px;
+}
+.Wlinks2 {
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #3554dd;
+	font-size: 14px;
+	text-decoration: none;
+	padding: 0px;
+}
+.Wlinks3 {
+	font: Regular 18px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #3554dd;
+	font-size: 18px;
+	text-decoration: none;
+	padding: 0px;
+	/* [disabled]background-color: #fdfae1; */
+}
+.slidetitle {
+	font: Regular 16px Arial;
+	font-family: Verdana,sans-serif;
+	font-weight: bold;
+	color: #666666;
+	text-decoration: none;
+	padding: 0px;
+}
+
+.Wlinks a{
+   font: Regular 18px Arial;
+   font-family:Verdana,sans-serif;
+   font-weight:bold;
+   color:#666666; 
+   background-color:#EEEEEE;
+   font-size:18px;
+   text-decoration:none;
+   padding:3px;
+   border-style:solid;
+   border-color:#666666;
+   border-width:2px;
+
+}
+
+.Wlinks a:visited{
+font: Regular 18px Arial;
+   font-family:Verdana,sans-serif;
+   font-weight:bold;
+   color:#666666; 
+   background-color:#EEEEEE;
+   border-style:solid;
+   border-color:#666666;
+   border-width:2px;
+   font-size:18px;
+   text-decoration:none;
+}
+
+.Wlinks a:hover { /*Selected Tab style*/
+   font-family:Verdana,sans-serif;
+   font-weight:bold;
+   color:#3554dd; 
+   background-color:#EEEEF4;
+   font-size:18px;
+   border-style:solid;
+   border-color:#3554dd;
+   border-width:2px;
+
+}
+
+/* ######### Style for Solid Block Mega Menu ######### */
+
+.solidblocktheme{ /*additional mega drop down menu style for this theme*/
+border:2px solid #2f4187;
+padding:0; /*remove default padding inside mega menu*/
+}
+
+.solidblocktheme p, .solidblocktheme .column{
+padding:5px; /*add padding inside p and .column elements within mega menu*/
+width:auto;
+}
+
+.solidblockmenu{
+	margin: 0;
+	padding: 0;
+	float: left;
+	font: bold 13px Arial;
+	width: 100%;
+	overflow: hidden;
+	background: black url(images/blockdefault_cnm.gif) center center repeat-x;
+
+}
+
+.solidblockmenu li{
+display: inline;
+
+}
+
+.solidblockmenu li a{
+float: left;
+color: white;
+padding: 9px 11px;
+text-decoration: none;
+
+
+border-right: 1px solid white;
+
+}
+
+.solidblockmenu li a:visited{
+color: white;
+}
+
+.solidblockmenu li a:hover, .solidblockmenu li a.selected{ /*Selected Tab style*/
+color: white;
+background: transparent url(images/blockactive_cnm.gif) center center repeat-x;
+}
+
+.solidblockmenu2{
+	margin: 0;
+	padding: 0;
+	float: left;
+	font: bold 13px Arial;
+	width: 135px;
+	overflow: hidden;
+	background: black url(images/blockdefault_cnm.gif) center center repeat-x;
+	padding-left: 12px;
+}
+
+.solidblockmenu2 li{
+display: inline;
+
+}
+
+.solidblockmenu2 li a{
+float: left;
+color: white;
+padding: 9px 11px;
+text-decoration: none;
+
+}
+
+.solidblockmenu2 li a:visited{
+color: white;
+}
+
+.solidblockmenu2 li a:hover, .solidblockmenu2 li a.selected{ /*Selected Tab style*/
+color: white;
+background: transparent url(images/blockactive_cnm.gif) center center repeat-x;
+}
+
+.solidblockmenu3{
+	margin: 0;
+	padding: 0;
+	float: left;
+	font: bold 13px Arial;
+	width: 135px;
+	overflow: hidden;
+	/* [disabled]border: 0px solid #487bdc; */
+	/* [disabled]border-width: 1px 0; */
+	background: black url(images/table_bk.gif) center center repeat-x;
+	padding-left: 15px;
+
+}
+
+.solidblockmenu3 li{
+display: inline;
+
+}
+
+.solidblockmenu3 li a{
+float: left;
+color: white;
+padding: 9px 9px;
+text-decoration: none;
+
+border: 1px solid #2f4187;
+}
+
+.solidblockmenu3 li a:visited{
+color: white;
+}
+
+.solidblockmenu3 li a:hover, .solidblockmenu3 li a.selected{ /*Selected Tab style*/
+color: white;
+background: transparent url(images/table_over_bk.gif) center center repeat-x;
+}
+
+.cc_workshop {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 15px;
+	font-weight: regular;
+	text-align:center;
+}
+
+
+</style>
+<meta charset=utf-8 />
+<meta charset="utf-8">
+<title>CNM Kick Start Workshop - Learning Styles and Note-Taking - Note Taking Strategies</title>
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: js/stylepink.css" type="text/css" />
+<style type="text/css">
+
+#sectionWrapper {
+	overflow: hidden;
+/*	background-image: url(bg2.png);*/
+	padding-bottom: 44px;
+}
+
+
+#wrapper {
+    width: 830px;
+    margin: 0 auto;
+}
+
+#title {
+    float: left;
+    padding: 15px 0 15px 0;
+    width: 330px;
+    background: #F68127;
+	-webkit-box-shadow: -1px 1px 1px #d9d9d9;
+	-moz-box-shadow: -1px 1px 1px #d9d9d9;
+	box-shadow:  -1px 1px 1px #d9d9d9;
+	border: 1px solid #c6c6c6;
+}
+
+#title a {
+	color: #2788d3;
+	font-family: Verdana, Arial,sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	text-transform: lowercase;
+	text-decoration: none;
+	margin-left: 75px;
+}
+
+#title a:hover{
+	color: #5c6a98;
+	
+	}
+	
+#about {
+	float: right;
+	height: 60px;
+	width: 550px;
+    background: #F68127;
+	-webkit-box-shadow: -1px 1px 1px #d9d9d9;
+	-moz-box-shadow: -1px 1px 1px #d9d9d9;
+	box-shadow:  -1px 1px 1px #d9d9d9;
+	border: 1px solid #c6c6c6;
+}
+
+#text {
+	float:left;
+	font-size: 14px;
+	line-height: 16px;
+	width: 492px;
+	margin: 15px 0 0 17px;
+}
+
+#logo {
+  float: right;
+  margin: 10px 8px 0 0;    
+  padding-top:21px;
+  position: absolute;
+  top: 10px;
+}
+
+#leftcontent {
+  clear: both;
+  margin-bottom: 5px;
+  float: left;
+  width: 410px;
+}
+
+#rightcontent {
+  float: right;
+  width: 410px;   
+}
+
+#rightcontent aside {
+	padding-top: 16px;
+}
+
+#videoattribution {
+  font-size:18px;
+  line-height: 22px;
+  min-height: 70px;
+  width: 320px;
+}
+
+#audioattribution {
+  font-size:18px;
+  line-height: 22px;
+  min-height: 70px;
+  width: 320px;
+}
+
+#wikidiv {
+    min-height: 145px;
+    width: 300px;
+}
+
+#wikidiv a {
+  font-size:18px;
+  line-height: 30px;
+}
+
+#footnote {
+	min-height: 45px;
+	width: 682px;
+	font-size: 18px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+   -webkit-text-size-adjust: none;
+   
+}
+#footnote2 {
+	min-height: 45px;
+	width: 682px;
+	font-size: 18px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	-webkit-text-size-adjust: none;
+	/* [disabled]text-align:center; */
+
+   
+}
+#footnote3 {
+	width: 450px;
+	font-size: 14px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	-webkit-text-size-adjust: none;
+	/* [disabled]text-align:center; */
+	color: #666;
+
+   
+}
+.hightlight_arrow {
+ 	background-color:#3554dd;
+	font-size: 18px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	padding:5px;
+	color:#FFF;
+	border: 1px solid #2e3276; 
+   -webkit-text-size-adjust: none;
+    -webkit-box-shadow: 5px 5px 5px  #334973; /*css 3 shadows*/
+-moz-box-shadow: 5px 5px 5px #334973;
+box-shadow: 5px 5px 5px #334973;
+
+}
+.hightlight_arrow2 {
+ 	background-color: #09F;
+	font-size: 18px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	padding:5px;
+	color:#FFF;
+	border: 1px solid #2e3276; 
+   -webkit-text-size-adjust: none;
+    -webkit-box-shadow: 5px 5px 5px  #334973; /*css 3 shadows*/
+-moz-box-shadow: 5px 5px 5px #334973;
+box-shadow: 5px 5px 5px #334973;
+
+}
+
+.hightlight_arrowS {
+ 	background-color:#3554dd;
+	font-size: 18px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	padding:5px;
+	color:#FFF;
+	border: 1px solid #2e3276; 
+   -webkit-text-size-adjust: none;
+    -webkit-box-shadow: -5px 5px 5px  #334973; /*css 3 shadows*/
+-moz-box-shadow: -5px 5px 5px #334973;
+box-shadow: -5px 5px 5px #334973;
+
+}
+.hightlight_arrowS2 {
+ 	background-color: #09F;
+	font-size: 18px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	padding:5px;
+	color:#FFF;
+	border: 1px solid #2e3276; 
+   -webkit-text-size-adjust: none;
+    -webkit-box-shadow: -5px 5px 5px  #334973; /*css 3 shadows*/
+-moz-box-shadow: -5px 5px 5px #334973;
+box-shadow: -5px 5px 5px #334973;
+
+}
+#bodynote {
+	min-height: 310px;
+	width: 1022px;
+	font-size: 18px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-style: normal;
+	-webkit-text-size-adjust: none;
+} 
+#sources {
+	margin-top:12px;
+}
+
+#video {
+  width: 540px;
+}
+#video2 {
+	width: 50px;
+	text-align: right;
+}
+aside {
+	padding: 5px;
+	text-align:center;
+	/* background: #3a2a45; */
+   
+	/*
+	border-top: 1px solid #554461;
+	border-left: 1px solid #554461;  
+	border-bottom: 1px solid #180a1f;    
+	border-right: 1px solid #180a1f;  
+	margin-bottom: 10px;
+*/
+}
+
+.overlay{
+	z-index: 9001;
+	display: none;
+	top: 0px;
+	left: 0px;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	height: 100%;
+	width: 100%;
+	background: red;
+	position: absolute;
+}
+
+.inactive{
+	z-index: 9001;
+	display: none;
+	top: 0px;
+	left: 0px;
+	opacity: 0.2;
+	filter: alpha(opacity=20);
+	height: 100%;
+	width: 100%;
+	background: grey;
+	position: absolute;
+}
+
+aside .content{
+	padding-top: 8px;
+	margin-top: 5px;
+	border-top: 1px solid #dbd3b9;
+	line-height: 20px;
+	color: #2e2e2e;
+	font-size: 12px;
+}
+
+aside .content a {
+	color: #f07d00;
+}
+
+/*aside:hover .content{
+	color: #000;
+}
+
+aside img{
+	display: block;
+	margin-bottom: 8px;
+}
+ */
+a.more {
+	font-weight: bold;
+	font-style: italic;
+	display: block;
+	text-align: right;
+}
+
+aside .icons{
+	display: block;
+	position: absolute;
+	top:6px;
+	right:8px;
+	padding: 0px;
+}
+
+footer {
+	clear:both;
+	margin-top: 20px;
+	padding: 9px;
+	text-align: center;
+	font-size: 11px;
+	color: #8f8f8f;
+	margin: 0 auto;
+	width: 895px;
+	
+}  
+.darkbk {
+	background-color: #fdfae1;
+}  
+
+
+footer a {
+	text-decoration: none;
+	color: #f07d00;
+}
+
+footer a:hover {
+	color: #2e2e2e;
+}
+
+#subtitlediv {
+	border-bottom: 2px #2e2e2e dotted; 
+	padding: 6px; 
+	min-height: 50px;
+	min-width: 374px;
+	color: #2e2e2e;
+	background-color: #fff; 
+	font-size: 18px;
+	font-family: Verdana; 
+}  
+     
+#timeline {
+	overflow:auto;
+	
+}  
+
+#rightcontent #sources {
+	margin-top: 0px; 
+	padding-bottom: 0px;
+}
+#footnoteholder {
+	padding-top: 0px;
+	padding-left: 171px;
+}
+#footnoteholder2 {
+	padding-top: 0px;
+	padding-left: 171px;
+}
+#instructions {
+	float: right;
+	color: #000;
+	background-color: #ceb2cf; 
+}
+
+
+</style>
+<link rel="icon" type="image/ico" href="images/icon.ico"></link>
+<link rel="shortcut icon" href="images/icon.ico"></link>
+<!-- Change jPlayer Skins here : Blue Monday or Pink Flag -->
+<!--<link href="jplayer-skin/jplayer.blue.monday.css" rel="stylesheet" type="text/css" />-->
+<link rel="stylesheet" title="Disabled for Preview-in-Browser: jplayer-skin/jplayer.pink.flag.css" type="text/css" />
+<style type="text/css">
+
+/*
+ * Skin for jPlayer Plugin (jQuery JavaScript Library)
+ * http://www.jplayer.org
+ *
+ * Skin Name: Pink Flag
+ *
+ * Copyright (c) 2010 Happyworm Ltd
+ * Dual licensed under the MIT and GPL licenses.
+ *  - http://www.opensource.org/licenses/mit-license.php
+ *  - http://www.gnu.org/copyleft/gpl.html
+ *
+ * Author: Silvia Benvenuti
+ * Skin Version: 1.0 (jPlayer 2.0.0)
+ * Date: 23rd March 2011
+ */
+
+div.jp-audio,
+div.jp-video {
+
+	/* Edit the font-size to counteract inherited font sizing.
+	 * Eg. 1.25em = 1 / 0.8em
+	 */
+
+	font-size:1em; /* No parent CSS that can effect the size in these demos */
+	font-family:Verdana, Arial, sans-serif;
+	line-height:1.6;
+	color: #fff;
+}
+div.jp-audio {
+	width: 410px;
+	padding-top: 0px;
+	padding-left: 12px;
+}
+
+div.jp-video-270p {
+	width:480px;
+}
+div.jp-video-360p {
+	width:640px;
+}
+div.jp-interface {
+	position: relative;
+	width: 100%;
+}
+
+
+div.jp-audio .jp-interface {
+	height: 36px;
+	background-color: #c8c8c8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border-radius: 5px;
+}
+
+/* @group CONTROLS */
+
+div.jp-controls-hldr {
+	clear: both;
+	width:440px;
+	margin:10px auto;
+	position: relative;
+	overflow:hidden;
+}
+
+div.jp-interface ul.jp-controls {
+	/* background: url("jplayer.pink.flag.jpg") 0 0 no-repeat; */
+	list-style-type:none;
+	padding: 1px 0 0px 1px;
+	overflow:hidden;
+	border-right: 1px solid #FFFFFF;
+	margin-right: 5px;
+	width: 35px;
+	height: 35px;
+	float: left;
+}
+
+div#jp_playlist_1, div#jp_playlist_2 {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 45px;
+	color: #000;
+}
+
+div.jp-audio ul.jp-controls {
+	/* margin:30px auto 0 auto; */
+}
+
+div.jp-video ul.jp-controls {
+	margin:0 0 0 115px;
+	float:left;
+	display:inline; /* need this to fix IE6 double margin */
+}
+
+ul.jp-controls2 {
+	margin:0 0 0 115px;
+	float:left;
+	display:inline; /* need this to fix IE6 double margin */
+}
+div.jp-interface ul.jp-controls li {
+	display:inline;
+	float: left;
+}
+ul.jp-controls2 li {
+	display:inline;
+	float: left;
+}
+div.jp-interface ul.jp-controls a {
+	display:block;
+	overflow:hidden;
+	text-indent:-9999px;
+	height: 34px;
+	margin: 0 1px 2px 0;
+	padding: 0;
+}
+
+ul.jp-controls2 a {
+	display: block;
+	overflow: hidden;
+	text-indent: -9999px;
+	height: 18px;
+	padding: 0;
+	margin-top: 0;
+	margin-right: 1px;
+	margin-bottom: 2px;
+	margin-left: 0;
+}
+/* @group single player controls */
+
+div.jp-type-single  .jp-controls li a{
+	width: 35px;
+}
+.jp-controls2 li a{
+	width: 35px;
+}
+
+div.jp-type-single  .jp-play {
+	background: url("jplayer-skin/p_play.gif") no-repeat;
+}
+
+
+div.jp-type-single  .jp-play:hover {
+	background: url("jplayer-skin/p_play_over.gif") no-repeat;
+}
+
+div.jp-type-single  .jp-pause {
+	background: url("jplayer-skin/p_pause_.gif") no-repeat;
+}
+
+div.jp-type-single  .jp-pause:hover {
+	background: url("jplayer-skin/p_pause_over.gif")  no-repeat;
+}
+
+div.jp-type-single  .jp-stop {
+	background: url("jplayer-skin/stop_button.gif") no-repeat;
+	position: absolute;
+	right: 180px;
+	top: 2px;
+}
+
+div.jp-type-single  .jp-stop:hover {
+	background: url("jplayer-skin/stop_button_over.gif") no-repeat;
+    position: absolute;
+    right: 180px;
+    top: 2px;
+}
+
+/* @end */
+
+/* @group playlist player controls */
+
+div.jp-type-playlist .jp-controls li a{
+	width: 49px;
+}
+
+div.jp-type-playlist .jp-play {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -24px -40px no-repeat;
+}
+
+div.jp-type-playlist .jp-play:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -124px -40px no-repeat;
+}
+
+div.jp-type-playlist .jp-pause {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -24px -120px no-repeat;
+}
+
+div.jp-type-playlist .jp-pause:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -124px -120px no-repeat;
+}
+
+div.jp-type-playlist .jp-stop {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -24px -80px no-repeat;
+}
+
+div.jp-type-playlist .jp-stop:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -124px -80px no-repeat;
+}
+
+div.jp-type-playlist .jp-previous {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -24px -200px no-repeat;
+}
+
+div.jp-type-playlist .jp-previous:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -124px -200px no-repeat;
+}
+
+div.jp-type-playlist .jp-next {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -24px -160px no-repeat;
+}
+
+div.jp-type-playlist .jp-next:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -124px -160px no-repeat;
+}
+
+/* @end */
+
+/* @end */
+
+
+
+
+/* @group TOGGLES */
+
+ul.jp-toggles {
+	list-style-type:none;
+	padding:0;
+	margin:0 auto;
+	z-index:20;
+	overflow:hidden;
+}
+
+div.jp-audio ul.jp-toggles {
+	width:60px;
+}
+
+div.jp-audio .jp-type-single ul.jp-toggles {
+	width:25px;
+}
+
+div.jp-video ul.jp-toggles {
+	width:100px;
+	margin-top: 10px;
+}
+
+ul.jp-toggles li{
+	display:block;
+	float:right;
+}
+
+ul.jp-toggles li a{
+	display:block;
+	width:25px;
+	height:18px;
+	line-height:100%; /* need this for IE6 */
+}
+
+.jp-fullscreen {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") 0 -420px no-repeat;
+	text-indent:-9999px;
+	margin-left: 20px;
+}
+
+.jp-fullscreen:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -30px -420px no-repeat;
+	cursor:pointer;
+}
+
+.jp-fullscreen-off {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -60px -420px no-repeat;
+	text-indent:-9999px;
+}
+
+.jp-fullscreen-off:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -90px -420px no-repeat;
+	cursor:pointer;
+}
+
+.jp-repeat {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") 0 -440px no-repeat;
+	text-indent:-9999px;
+}
+
+.jp-repeat:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -30px -440px no-repeat;
+	cursor:pointer;
+}
+
+.jp-repeat-off {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -60px -440px no-repeat;
+	text-indent:-9999px;
+}
+
+.jp-repeat-off:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -90px -440px no-repeat;
+	cursor:pointer;
+}
+
+.jp-shuffle {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") 0 -460px no-repeat;
+	text-indent:-9999px;
+	margin-left: 5px;
+}
+
+.jp-shuffle:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -30px -460px no-repeat;
+	cursor:pointer;
+}
+
+.jp-shuffle-off {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -60px -460px no-repeat;
+	text-indent:-9999px;
+}
+
+.jp-shuffle-off:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -90px -460px no-repeat;
+	cursor:pointer;
+}
+
+
+/* @end */
+
+/* @group progress bar */
+
+/* The seeking class is added/removed inside jPlayer */
+div.jp-seeking-bg {
+	background: url("jplayer-skin/pbar-ani-pinkflag.gif");
+}
+
+.jp-progress {
+	background-color: #fff;
+	width: 317px;
+	height: 7px;
+	/* padding: 0 2px 2px 2px; */
+	margin-bottom: 4px;
+	float: left;
+	position: absolute;
+    top: 23px;
+	left: 45px;
+}
+
+.dr-label {
+	font-size: 11px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.jp-progress:hover {
+	cursor:pointer;
+}
+
+div.jp-video .jp-progress {
+	border-top:1px solid #180a1f;
+	border-bottom: 1px solid #554560;
+	width:100%;
+	background-image: none;
+	padding: 0;
+}
+
+.jp-play-bar {
+	/* background: url("jplayer.pink.flag.jpg") 0px -280px repeat-x; */
+	background-color: #808080;
+	height: 7px;
+}
+
+.jp-seek-bar {
+	/*background: url("jplayer.pink.flag.jpg") 0px -260px repeat-x;
+	height: 13px; */
+	height: 7px;
+}
+
+/* @end */
+
+/* @group volume controls */
+
+div.jp-interface ul.jp-controls a.jp-mute, div.jp-interface ul.jp-controls a.jp-unmute {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") 0px -330px no-repeat;
+	position: absolute;
+	width: 16px;
+	height: 11px;
+}
+
+div.jp-audio ul.jp-controls a.jp-mute {
+	top: -36px;
+	*top:-6px; /* override for IE6 an IE7 */
+	left: 0;
+}
+
+div.jp-audio ul.jp-controls a.jp-unmute {
+	top: -36px;
+	*top:-6px; /* override for IE6 an IE7 */
+	right: 0;
+}
+
+
+div.jp-video ul.jp-controls a.jp-mute {
+	left: 0;
+	top:14px;
+}
+
+
+div.jp-interface ul.jp-controls a.jp-mute:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -25px -330px no-repeat;
+}
+
+div.jp-interface ul.jp-controls a.jp-unmute {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") 0px -350px no-repeat;
+}
+
+div.jp-interface ul.jp-controls a.jp-unmute:hover {
+	background: url("jplayer-skin/jplayer.pink.flag.jpg") -25px -350px no-repeat;
+}
+
+div.jp-video .jp-unmute {
+	left: 84px;
+	top:14px;
+}
+
+.jp-volume-bar {
+	background: url("jplayer-skin/volume.png") no-repeat;
+	height: 35px;
+	position: absolute;
+	width: 34px;
+	overflow: hidden;
+	right: 0;
+    top: 0;
+	margin-right: 6px;
+}
+
+.jp-volume-bar:hover {
+	background: url("jplayer-skin/volume_over.png") no-repeat;
+	cursor:  pointer;
+}
+
+/*
+div.jp-audio .jp-interface .jp-volume-bar {
+	top: -20px;
+	*top:10px;
+	left: 0;
+}
+*/
+
+.jp-video .jp-volume-bar {
+	float: left;
+	width:95px;
+	border-right:1px solid #000;
+	margin-top: 30px;
+}
+
+.jp-video .jp-volume-bar {  /* override for IE6 an IE7 */
+	*position: absolute;
+	*top: 0;
+	*left: 0;
+}
+
+
+.dr-volume-bar-wrapper {
+    background-color: #FFFFFF;
+	position: absolute;
+	right: 0;
+    top: 0;
+	width: 34px;
+	margin-right: 6px;
+}
+
+.dr-volume-bar-outer-wrapper { 
+	padding-left: 5px;
+}
+
+.jp-volume-bar-value {
+	/* background: url("jplayer.pink.flag.jpg") 0px -320px repeat-x; */
+	background-color: #808080;
+	height: 35px;
+}
+
+/* @end */
+
+/* @group current time and duration */
+
+.jp-current-time, .jp-duration {
+	color: #FFFFFF;
+    font-size: 10px;
+    position: absolute;
+    right: 47px;
+    text-align: right;
+    top: 4px;
+}
+.jp-title {
+	color: #3554dd;
+	font-size: 10px;
+	position: absolute;
+	right: 260px;
+	text-align: left;
+	top: 3px;
+}
+.jp-title2 {
+	color: #3554dd;
+	font-size: 10px;
+	position: absolute;
+	right: 115px;
+	text-align: left;
+	top: 3px;
+}
+
+.jp-current-time {
+	right: 334px;
+}
+
+
+
+.jp-duration {
+    right: 47px;
+}
+
+.jp-video .jp-current-time {
+	padding-left:20px;
+}
+
+.jp-video .jp-duration {
+	padding-right:20px;
+}
+
+/* @end */
+
+/* @group playlist */
+
+.jp-playlist ul{
+	list-style-type:none;	
+	font-size:.7em;
+	margin: 0;
+	padding: 0;
+}
+
+.jp-video .jp-playlist ul{
+	margin: 0 20px;
+}
+
+.jp-playlist li{
+	position: relative;
+	padding: 2px 0;
+	border-top:1px solid #554461;
+	border-bottom:1px solid #180a1f;
+/*	width:100%;*/
+	overflow: hidden;
+}
+
+div.jp-type-single  {
+	background-color: #c8c8c8;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+}
+
+div.jp-type-single .jp-playlist li{
+	border-bottom:0;
+	padding:0;
+}
+
+.jp-playlist li:first-child, .jp-playlist li.jp-playlist-current:first-child {
+	border-top:none;
+}
+
+.jp-single-player .jp-playlist li:last-child {
+	border-bottom:none;
+}
+
+.jp-playlist a {
+	color: #fff;
+	text-decoration:none;
+}
+
+.jp-playlist a:hover {
+	color: #e892e9;
+}
+
+
+.jp-playlist li.jp-playlist-current {
+	background-color: #26102e;
+	margin: 0 -20px;
+	padding: 2px 20px;
+	border-top: 1px solid #26102e;
+	border-bottom: 1px solid #26102e;
+}
+
+.jp-playlist-current a{
+	color: #e892e9;
+}
+
+
+
+div.jp-type-playlist div.jp-playlist div.jp-free-media {
+	display:block;
+	float: right;
+/*	display:inline;
+	margin-left:20px;*/
+	color:#8C7A99;
+}
+
+div.jp-type-playlist div.jp-playlist div.jp-free-media a{
+	color:#8C7A99;
+}
+
+div.jp-type-playlist div.jp-playlist div.jp-free-media a:hover{
+	color:#E892E9;
+}
+
+/* @end */
+
+
+div.jp-video div.jp-video-play {
+	background: transparent url("jplayer-skin/jplayer.blue.monday.video.play.png") no-repeat center;
+	/* position: relative; */
+	position: absolute;
+	cursor:pointer;
+	z-index:2;
+}
+div.jp-video div.jp-video-play:hover {
+	background: transparent url("jplayer-skin/jplayer.blue.monday.video.play.hover.png") no-repeat center;
+}
+div.jp-video-270p div.jp-video-play {
+	top:-290px;
+	width:480px;
+	height:270px;
+}
+div.jp-video-360p div.jp-video-play {
+	top:-360px;
+	width:640px;
+	height:360px;
+}
+
+div.jp-jplayer {
+	width:0px;
+	height:0px;
+}
+
+div.jp-video-270p div.jp-jplayer {
+	width:480px;
+	height:270px;
+}
+div.jp-video-360p div.jp-jplayer {
+	width:640px;
+	height:360px;
+}
+div.jp-jplayer {
+	background-color: #c8c8c8;
+}
+
+
+</style>
+<style type="text/css">
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image:url(images/website_bk2.gif);
+}
+
+</style>
+<script src="js/ie.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54914120-1', 'cnm.edu');
+  ga('send', 'pageview');
+
+</script>
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide from none JavaScript Browsers
+
+Image1= new Image(35,35)
+Image1.src = "jplayer-skin/p_play_over.gif"
+
+Image2 = new Image(35,35)
+Image2.src = "jplayer-skin/p_play.gif"
+
+Image3= new Image(35,35)
+Image3.src = "jplayer-skin/p_pause_.gif"
+
+Image4 = new Image(35,35)
+Image4.src = "jplayer-skin/p_pause_over.gif"
+
+Image5= new Image(34,35)
+Image5.src = "jplayer-skin/volume.png"
+
+Image6 = new Image(34,35)
+Image6.src = "jplayer-skin/volume_over.png"
+
+Image7= new Image(35,18)
+Image7.src = "jplayer-skin/stop_button.gif"
+
+Image8 = new Image(35,18)
+Image8.src = "jplayer-skin/stop_button_over.gif"
+
+
+Image9= new Image(1022,66)
+Image9.src = "images/top_header_small.jpg"
+
+Image10 = new Image(1024,66)
+Image10.src = "images/time_m_header.jpg"
+
+Image11= new Image(1024,25)
+Image11.src = "images/bottom_header2.jpg"
+
+Image12 = new Image(1024,13)
+Image12.src = "images/footer_small.jpg"
+/*
+Image13= new Image(34,35)
+Image13.src = "jplayer-skin/volume.png"
+
+Image14 = new Image(34,35)
+Image14.src = "jplayer-skin/volume_over.png"*/
+// End Hiding -->
+</SCRIPT>
+<script src="js/libs/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+<script src="js/libs/popcorn.js"></script>
+<script src="js/libs/popcorn.subtitle.js"></script>
+<!--<script src="js/libs/popcorn.parserSRT.js"></script>-->
+<script src="js/libs/popcorn.timeline.js"></script>
+<script src="js/libs/popcorn.footnote.js"></script>
+<script>
+    
+  </script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+<script src="js/ddmegamenu.js">
+
+/***********************************************
+* DD Mega Menu (c) Dynamic Drive (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+
+</script>
+<script>
+
+ddmegamenu.docinit({
+	menuid:'solidmenu',
+	dur:200 //<--no comma after last settingd
+})
+
+ddmegamenu.docinit({
+	menuid:'solidmenu2',
+	dur:200 //<--no comma after last settingd
+})
+	
+ddmegamenu.docinit({
+	menuid:'megaanchorlink',
+	dur:500,
+	easing:'easeInOutCirc' //<--no comma after last setting
+})
+
+</script>
+<script src="js/ls_s7.js"></script><!-- Interactive text goes here (media and footnotes) -->
+<script src="js/audio_ls7.js"></script><!-- sets the audio and deals with jPlayer related stuff -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54914120-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body leftmargin="0" marginwidth="0" marginheight="0" >
+<!--<table border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td></td>
+  </tr>
+</table>-->
+<table border="0" cellpadding="0" cellspacing="0" width="1024"  align="center"  style="border-left: 1px solid #039;  border-right: 1px solid #039;">
+  <tr>
+    <td height="5" background="images/top_rim.gif" width="1024"></td>
+  </tr>
+    <tr >
+    <td height="13" background="images/footer_small.jpg" width="1024"></td>
+  </tr>
+    <tr>
+    <td><img src="images/top_header_small.jpg" width="1022" height="66" usemap="#Map2" border="0"></td>
+  </tr>
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="1024" height="36"  align="center" style="border-left: 1px solid #039;  border-right: 1px solid #039;">
+  <tr>
+    <td width="40" background="images/blockdefault_cnm.gif"></td>
+    <td width="1"  bgcolor="#FFFFFF"></td>
+    <td width="984" background="images/blockdefault_cnm.gif"><ul id="solidmenu" class="solidblockmenu" >
+    
+<li><a href="index.html">Welcome Video</a></li>
+<li><a href="#" rel="workshops[right]">WORKSHOPS</a></li>
+<li><a href="schedule.html" target="_parent">Schedule for in-person workshops</a></li>
+<li><a href="http://www.cnm.edu/depts/achievement-coach/ac_contact.html" target="_blank">Achievement Coaches</a></li>
+<li><a href="resources.html" target="_parent">Resources </a></li>
+<li><a href="http://www.cnm.edu/student-resources/class-schedule/important-dates-and-deadlines" target="_blank">Important Dates and Deadlines </a></li>
+</ul>
+
+<!--First mega menu (1)Table of Contents -->
+
+<div id="workshops" class="mega solidblocktheme" >
+
+	<p style="margin:5px 0 10px 0"><b>Choose a Workshop below:</p>
+
+	<div class="column" >
+	<ul style="padding-bottom:10px">
+	<li style="padding-bottom:20px"><a href="time_management_s1.html" target="_parent">Time Management</a></li>
+<!--	<li><a href="#">Student Success Strategies</a></li><br/>-->	
+	<li><a href="test_anxiety_s1.html" target="_parent">Test Anxiety</a></li><br/>	<li><a href="study_skills_s1.html" target="_parent">Study Skills/Test Taking</a></li><br/>	<li><a href="learning_styles_s1.html" target="_parent">Learning Styles/Note-Taking </a></li><br/>
+
+	<li><a href="test_anxiety_s1.html" target="_parent">Test Anxiety</a></li><br/>	<li><a href="study_skills_s1.html" target="_parent">Study Skills/Test Taking</a></li><br/>	<li><a href="learning_styles_s1.html" target="_parent">Learning Styles/Note-Taking </a></li><br/>	<li><a href="study_skills_s1.html" target="_parent">Study Skills/Test Taking</a></li><br/>	<li><a href="learning_styles_s1.html" target="_parent">Learning Styles/Note-Taking </a></li><br/>	
+   <a href="#" >Close</a></ul>
+    
+</div>
+</div>
+</td>
+<td width="20" background="images/blockdefault_cnm.gif" ></td>
+  </tr>
+</table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="1024" align="center" style="border-left: 1px solid #039;  border-right: 1px solid #039;">
+  <tr>
+    <td height="66" background="images/learning_styles_header.jpg" width="1024"></td>
+  </tr>
+</table>
+
+<table  border="0"  cellpadding="0" cellspacing="0"  height="48" width="1024" background="images/control_sub_bk.gif"  align="center" style="border-left: 1px solid #039;  border-right: 1px solid #039;">
+  
+    <td width="159"   ><ul id="solidmenu2" class="solidblockmenu3"    >
+        <li ><a href="#" rel="time_m[right]" >Table of Contents</a>
+        <li></li>
+        </li>
+      </ul>
+      
+      <!--First mega menu (1)Table of Contents -->
+      
+      <div id="time_m" class="mega2 solidblocktheme">
+	<p style="margin:5px 0 10px 0"><b>Choose a Chapter below:</p>
+
+	<div class="column2" >
+	<ul style="padding-bottom:10px">
+	<li style="padding-bottom:20px"><a href="learning_styles_s1.html" target="_parent">I.Intro</a></li>
+	<li style="padding-bottom:20px"><a href="learning_styles_s2.html" target="_parent">II.Overview</a></li>
+	<li style="padding-bottom:20px"><a href="learning_styles_s3.html" target="_parent">III.Learning Styles</a></li>
+	<li style="padding-bottom:20px"><a href="learning_styles_s4.html" target="_parent">IV.Primary/Secondary</a></li>
+	<li style="padding-bottom:20px"><a href="learning_styles_s5.html" target="_parent">V.Techniques</a></li>
+	<li style="padding-bottom:20px"><a href="learning_styles_s6.html" target="_parent">VI.Note-Taking</a></li>	
+	<li style="padding-bottom:20px">VII.Note Taking Strategies</li>
+	<li style="padding-bottom:20px"><a href="learning_styles_s8.html" target="_parent">VIII.Verbal Clues</a></li>
+    <li style="padding-bottom:20px"><a href="learning_styles_s9.html" target="_parent">IX.SQRW Method</a></li>
+    <li style="padding-bottom:20px"><a href="learning_styles_s10.html" target="_parent">X.SQRW Checklist</a></li>
+    <li style="padding-bottom:30px"><a href="learning_styles_s11.html" target="_parent">XI.Review</a></li><a href="#" >Close</a></ul>
+
+
+        </div>
+      </div>
+      </td>
+    <td width="434"><!-- First Player -->
+      
+      <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+      <div id="jp_container_1" class="jp-audio">
+        <div class="jp-type-single">
+          <div class="jp-gui jp-interface">
+          
+            <ul class="jp-controls" style="margin:0">
+              <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+              <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+    
+						<!--<li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+						<li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+					  	<li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>-->
+            </ul> <ul class="jp-controls2" style="margin:0"><li> <a href="javascript:;" class="jp-stop" >stop</a></li></ul>
+            <div class="jp-progress">
+              <div class="jp-seek-bar">
+                <div class="jp-play-bar"></div>
+              </div> 
+            </div>
+            <div class="dr-volume-bar-outer-wrapper">
+              <div class="dr-volume-bar-wrapper">
+                <div class="jp-volume-bar-value"></div>
+              </div>
+            </div>
+            <div class="jp-volume-bar"></div>
+            <div class="jp-current-time"></div>
+            <div class="jp-title">VII.</div>
+            <div class="jp-duration"></div>
+          </div>
+          <!--<ul class="jp-toggles">
+							<li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+							<li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+						</ul>--> 
+        </div>
+    </div>
+ 
+      
+      <!-- End jPlayer stuff --></td>
+    <td   width="431" ><div class="Wlinks" align="center"><a href="learning_styles_s8.html" target="_parent">- CLICK HERE to continue WORKSHOP -</a></div></td>
+  </tr>
+</table>
+
+
+<table border="0" width="1024"  background="images/cc_bk.gif" align="center"  style="border-left: 1px solid #039;  border-right: 1px solid #039;">
+  <tr>
+    <td><aside id="footnoteholder">
+        <div class="content" id="footnote"></div>
+      </aside></td>
+  </tr>
+</table>
+<table border="0" width="1024" height="22"  bgcolor="#FFFFF0" align="center"  style="border-left: 1px solid #039;  border-right: 1px solid #039;">
+  <tr>
+    <td align="center" class="slidetitle">Note  Taking Strategies</td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="1024" bgcolor="#FFFFF0" background="images/ws/ta_3_1.jpg" align="center" style="border-left: 1px solid #039;  border-right: 1px solid #039;">
+  <tr>
+    <td>
+        <div class="content2" id="bodynote"></div>
+      </td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="1024"  align="center" style="border-left: 1px solid #039;  border-right: 1px solid #039; border-bottom: 1px solid #039;">
+  <tr>
+    <td height="10" background="images/bottom_bk.gif" width="1024"></td>
+  </tr>
+    <tr>
+    <td><img src="images/bottom_header2.jpg" width="1022" height="25" usemap="#Map" border="0"></td>
+  </tr>
+</table>
+
+<map name="Map">
+  <area shape="rect" coords="430,0,590,25" href="http://www.cnm.edu/" target="_blank">
+</map>
+
+<map name="Map2">
+  <area shape="rect" coords="9,1,129,62" href="http://www.cnm.edu/" target="_blank">
+</map>
+</body>
+</html>

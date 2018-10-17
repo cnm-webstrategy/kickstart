@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="jspdf.js" />
+<style type="text/css">
+body {
+	background-color: #F5F5F5;
+}
+</style>
+<title>CNM Time Survey</title>
+
+<script type="text/javascript">
+tday  =new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+function GetClock(){
+d = new Date();
+nday   = d.getDay();
+nmonth = d.getMonth();
+ndate  = d.getDate();
+nyear = d.getYear();
+nhour  = d.getHours();
+nmin   = d.getMinutes();
+if(nyear<1000) nyear=nyear+1900;
+
+     if(nhour ==  0) {ap = " AM";nhour = 12;} 
+else if(nhour <= 11) {ap = " AM";} 
+else if(nhour == 12) {ap = " PM";} 
+else if(nhour >= 13) {ap = " PM";nhour -= 12;}
+
+if(nmin <= 9) {nmin = "0" +nmin;}
+
+
+document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+ap+"";
+setTimeout("GetClock()", 1000);
+}
+window.onload=GetClock;
+</script>
+
+
+<script>
+function printpage()
+{
+window.print();
+}
+</script>
+
+<script type="text/javascript">
+function processForm() {
+//get form variables
+var inclass = Number( document.getElementById( "inclass" ).value );
+var ofwork = Number( document.getElementById( "ofwork" ).value );
+var socializing = Number( document.getElementById( "socializing" ).value );
+var functions = Number( document.getElementById( "functions" ).value );
+var sleep = Number( document.getElementById( "sleep" ).value );
+var grooming = Number( document.getElementById( "grooming" ).value );
+var meals = Number( document.getElementById( "meals" ).value );
+var chores = Number( document.getElementById( "chores" ).value );
+var traveldays = Number( document.getElementById( "traveldays" ).value );
+var travelends = Number( document.getElementById( "travelends" ).value );
+var sleeptotalBox = document.getElementById( "sleeptotal" );
+var groomingtotalBox = document.getElementById( "groomingtotal" );
+var mealstotalBox = document.getElementById( "mealstotal" );
+var chorestotalBox = document.getElementById( "chorestotal" )
+var traveldaystotalBox = document.getElementById( "traveldaystotal" );
+var travelendstotalBox = document.getElementById( "travelendstotal" );
+var totalBox = document.getElementById( "total" );
+var totalSubBox = document.getElementById( "totalSub" );
+var grandtotalBox = document.getElementById( "grandtotal" );
+var overBox = document.getElementById( "overtext" );
+
+
+//set
+total = 0;
+totalSub = 0;
+grandtotal = 0;
+sleeptotal = 0;
+groomingtotal = 0;
+mealstotal = 0;
+chorestotal = 0;
+traveldaystotal = 0;
+travelendstotal = 0;
+overtext = 0;
+
+//multi totals
+sleeptotal = sleep * 7;
+groomingtotal = grooming * 7;
+mealstotal = meals * 7;
+chorestotal = chores * 7;
+traveldaystotal = traveldays * 7;
+travelendstotal = travelends * 2;
+
+//multi totals text box
+
+
+//figure final total
+total = inclass + ofwork + socializing + functions + sleeptotal + groomingtotal + mealstotal + chorestotal + traveldaystotal + travelendstotal;
+totalSub = inclass + ofwork + socializing + functions + sleeptotal + groomingtotal + mealstotal + chorestotal + traveldaystotal + travelendstotal;
+
+overtext = 'Over';
+//grandtotal = 168 - total;
+if (total <= 168)
+  {
+  grandtotal = 168 - total;
+  overtext = '';
+  }
+else
+  {
+  grandtotal = 168 - total;
+   overtext = 'OVER';
+  }
+//output to text
+sleeptotalBox.value = sleeptotal.toString();
+groomingtotalBox.value = groomingtotal.toString();
+mealstotalBox.value = mealstotal.toString();
+chorestotalBox.value = chorestotal.toString();
+traveldaystotalBox.value = traveldaystotal.toString();
+travelendstotalBox.value = travelendstotal.toString();
+totalBox.value = total.toString();
+totalSubBox.value = totalSub.toString();
+grandtotalBox.value = grandtotal.toString();
+overBox.value = overtext.toString();
+}
+</script>
+
+<script>
+function closeWin()
+{
+window.close();
+}
+</script>
+
+<SCRIPT TYPE="text/javascript">
+<!--
+// copyright 1999 Idocs, Inc. http://www.idocs.com
+// Distribute this script freely but keep this notice in place
+function numbersonly(myfield, e, dec)
+{
+var key;
+var keychar;
+
+if (window.event)
+   key = window.event.keyCode;
+else if (e)
+   key = e.which;
+else
+   return true;
+keychar = String.fromCharCode(key);
+
+// control keys
+if ((key==null) || (key==0) || (key==8) || 
+    (key==9) || (key==13) || (key==27) )
+   return true;
+
+// numbers
+else if ((("0123456789").indexOf(keychar) > -1))
+   return true;
+
+// decimal point jump
+else if (dec && (keychar == "."))
+   {
+   myfield.form.elements[dec].focus();
+   return false;
+   }
+else
+   return false;
+}
+
+//-->
+</SCRIPT>
+
+</head>
+
+<body>
+
+<div align="left" id="clockbox"></div>
+<form id="form1" action="" method="get">
+<p><strong>CNM Time Survey</strong></p>
+<p>1.Number of hours <strong>in class</strong> per week
+<input type="text" id="inclass" size="3" maxlength="3" value="" onkeyup="processForm()" onKeyPress="return numbersonly(this, event)"/>
+
+<p>2.Number of hours of <strong>work</strong> per week
+<input type="text" id="ofwork" size="3" maxlength="3" value="" onkeyup="processForm()" onKeyPress="return numbersonly(this, event)"/>
+
+<p>3. Number of hours per week spent <strong>socializing, gaming,<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;on the internet (i.e. Facebook, Twitter, Youtube etc.)</strong>
+    <input type="text" id="socializing" size="3" maxlength="3" value="" onkeyup="processForm()" onKeyPress="return numbersonly(this, event)"/>
+      
+<p>3. Number of hours per week for regularly scheduled <strong>functions</strong> <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;(clubs, church, get-togethers, etc.)
+<input type="text" id="functions" size="3" maxlength="3" value="" onkeyup="processForm()" onKeyPress="return numbersonly(this, event)"/>
+
+<p>5. Number of hours of <strong>sleep</strong> each night
+<input type="text" id="sleep" size="2" maxlength="2" value="" onkeyup="processForm()" onKeyPress="return numbersonly(this, event)"/>
+x 7 =&nbsp;<input type="text" id="sleeptotal" size="3" maxlength="3"  readonly="readonly" value="0" />
+
+<p>6. Number of <strong>personal grooming</strong> hours per day
+<input type="text" id="grooming" size="2" maxlength="2" value="" onkeyup="processForm()" onKeyPress="return numbersonly(this, event)"/>
+x 7 =&nbsp;<input type="text" id="groomingtotal" size="1" maxlength="3"  readonly="readonly" value="0" />
+
+<p>7. Number of hours for <strong>meals (including prep time)</strong> per day 
+<input type="text" id="meals" size="2" maxlength="2" value="" onkeyup="processForm()" onKeyPress="return numbersonly(this, event)"/>
+x 7 =&nbsp;<input type="text" id="mealstotal" size="3" maxlength="3"   readonly="readonly" value="0" />
+
+
+<p>8. Number of hours per day for <strong>chores, errands</strong>
+<input type="text" id="chores" size="2" maxlength="2" value="" onkeyup="processForm()" onKeyPress="return numbersonly(this, event)"/>
+x 7 =&nbsp;<input type="text" id="chorestotal" size="3" maxlength="3"   readonly="readonly" value="0" />
+
+<p>9. Total <strong>travel</strong> time on weekdays	
+<input type="text" id="traveldays" size="3" maxlength="3" value="" onkeyup="processForm()" onKeyPress="return numbersonly(this, event)"/>
+x 7 =&nbsp;<input type="text" id="traveldaystotal" size="3" maxlength="3"   readonly="readonly" value="0" />
+
+<p>10. Total <strong>travel</strong> time for weekends		
+<input type="text" id="travelends" align="right" size="3" maxlength="3" value="" onkeyup="processForm()" onKeyPress="return numbersonly(this, event)"/>
+x 2 =&nbsp;<input type="text" id="travelendstotal" size="3" maxlength="3"   readonly="readonly" value="0" />
+
+ 
+<p>Now <strong>ADD</strong> up the <strong>TOTAL</strong>: <input type="text" id="total" size="3" maxlength="3" readonly="readonly" value="0" />
+<p>
+<strong>SUBTRACT</strong> the <strong>TOTAL</strong> from the total number of hours in a week:<br />
+168 -
+<input type="text" id="totalSub" size="3" maxlength="3"   readonly="readonly" value="0" /> 
+=&nbsp;<input type="text" id="grandtotal" size="4" maxlength="4"   readonly="readonly" value="168" />*
+<input type="text" id="overtext" size="5" maxlength="5"   readonly="readonly" value=""  style="color:#F00; font-weight:bold; background:#F5F5F5;  border:hidden" /> 
+<p>* The remaining hours are the hours you have allowed yourself to study. 
+  <!--<input type="button" id="submit" value="Calculate Order Total" onclick="processForm()" />-->
+</form>
+<p><input type="button" value="Print Survey" onclick="printpage()">
+<input type="button" value="- Click here to continue back to slide show -" onclick="closeWin()">
+
+</body>
+</html>
