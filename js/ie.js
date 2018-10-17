@@ -158,7 +158,7 @@ var docWrite = function(text){
   docWrite("<strong>For CNM Students,</strong> click the link below to download and install <strong>Chrome.</strong> ");
 docWrite('<A HREF="https://www.google.com/intl/en/chrome/browser/" target="_blank">Install Chrome Browser</A>') ;
 docWrite("<p><strong>Once Chrome is installed,</strong> copy the<strong> URL </strong>below and paste it in the <strong>Chrome address line:</strong>");
-docWrite("http://w1imr.cnm.edu/kickstart/");
+docWrite("//w1imr.cnm.edu/kickstart/");
   docWrite("----------------------------------------------------------------------------");
 	
 	}

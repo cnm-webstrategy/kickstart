@@ -250,7 +250,7 @@ $(document).ready(function(){
 			$('#tweet').empty();
 			$('#tweet').append(theTweet);  
 			$('#tweet-like').empty();
-			$('#tweet-like').append('<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script><a data-url="" data-text="'+theTweet+'" href="http://twitter.com/share?url=x" class="twitter-share-button">Tweet</a>');  
+			$('#tweet-like').append('<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script><a data-url="" data-text="'+theTweet+'" href="//twitter.com/share?url=x" class="twitter-share-button">Tweet</a>');  
 		} 
 	});  
 });

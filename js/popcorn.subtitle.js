@@ -65,7 +65,7 @@
           name: "Popcorn Subtitle Plugin",
           version: "0.1",
           author: "Scott Downe",
-          website: "http://scottdowne.wordpress.com/"
+          website: "//scottdowne.wordpress.com/"
         },
         options: {
           start: {
