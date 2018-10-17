@@ -17,7 +17,7 @@
         }
       };
 
-  Popcorn.getScript( "http://www.google.com/jsapi", callBack );
+  Popcorn.getScript( "//www.google.com/jsapi", callBack );
 
   /**
    * Subtitle popcorn plug-in 
